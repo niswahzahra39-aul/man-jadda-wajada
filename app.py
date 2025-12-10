@@ -7,6 +7,7 @@ pages = [
     st.Page(page="pages/page3.py", title="Settings", icon="⚙️",)
 =======
     st.Page(page="pages/page3.py", title="Settings", icon="⚙",
+
 ]
 
 pg = st.navigation(
