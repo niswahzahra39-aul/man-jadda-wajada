@@ -6,8 +6,7 @@ pages = [
 <<<<<<< HEAD
     st.Page(page="pages/page3.py", title="Settings", icon="⚙️",)
 =======
-    st.Page(page="pages/page3.py", title="Settings", icon="⚙",)
->>>>>>> 602db7bebbde9c91e07d5c6a13311c29945f128b
+    st.Page(page="pages/page3.py", title="Settings", icon="⚙",
 ]
 
 pg = st.navigation(
