@@ -15,3 +15,5 @@ st.pyplot(fig)
 
 
 df = pd.read_csv("data/DaftarSaham.csv")
+
+st.write(df.head())
