@@ -39,7 +39,3 @@ Jika dilihat dari papan pencatatan, perusahaan pada Papan Utama umumnya memiliki
 st.header("Kesimpulan")
 
 st.markdown("""Data tersebut berisi daftar emiten saham di Bursa Efek Indonesia yang mencakup informasi penting seperti kode saham, nama perusahaan, tanggal listing, jumlah lembar saham beredar, sektor industri, harga terakhir, serta berbagai indikator aktivitas perdagangan. Secara umum, data ini menggambarkan keragaman perusahaan publik di Indonesia dari berbagai sector mulai dari agrikultur, media, asuransi, hingga ritel dengan variasi kapitalisasi dan umur listing yang cukup luas. Informasi ini dapat digunakan untuk analisis pasar modal, seperti penilaian kinerja sektor, identifikasi likuiditas saham, maupun pemetaan karakteristik emiten berdasarkan harga, volume, serta riwayat perdagangannya.""")
-
-st.header("Daftar Pustaka")
-
-st.write("")
