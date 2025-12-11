@@ -20,3 +20,4 @@ df = pd.read_csv("data/DaftarSaham.csv")
 st.write(df.head())
 
 st.header("Analisis")
+st.write("
