@@ -35,3 +35,6 @@ st.write("""Analisis data perusahaan yang terdaftar di Bursa Efek Indonesia menu
 
 Jika dilihat dari papan pencatatan, perusahaan pada Papan Utama umumnya memiliki fundamental kuat dan performa saham yang lebih stabil, sementara perusahaan di Papan Pengembangan dan Papan Akselerasi memiliki volatilitas lebih tinggi karena berada pada tahap pertumbuhan. Selain itu, umur perusahaan berdasarkan tahun pencatatan menunjukkan bahwa perusahaan yang telah lama terdaftar di BEI cenderung memiliki reputasi lebih kuat dan fluktuasi harga yang lebih rendah dibanding perusahaan yang baru IPO. Secara keseluruhan, data menggambarkan bahwa performa saham di BEI dipengaruhi oleh sektor industri, kapitalisasi pasar, papan pencatatan, harga saham, serta umur pencatatan perusahaan. Analisis ini menunjukkan bahwa pasar saham Indonesia memiliki struktur yang kompleks dengan dinamika risiko dan return yang bervariasi antar kelompok perusahaan, sehingga pemahaman terhadap karakteristik tersebut penting dalam menilai performa saham secara komprehensif."""
         )
+
+st.header("Kesimpulan")
+st.write
