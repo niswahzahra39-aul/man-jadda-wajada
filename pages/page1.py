@@ -43,4 +43,4 @@ st.markdown("""Data tersebut berisi daftar emiten saham di Bursa Efek Indonesia 
         )
 st.header("Daftar Pustaka")
 
-st.writer("")
+st.write("")
