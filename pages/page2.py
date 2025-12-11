@@ -14,6 +14,10 @@ ax.plot(x, y)
 
 st.pyplot(fig)
 
-df = pd.read_csv("data/DataSaham.csv")
+import os
+import pandas as pd
+
+file_path = os.path.join(os.path.dirname(__file__), "..", "data", "DataSaham.csv")
+df = pd.read_csv(file_path)
 
 st.write(df.head())
