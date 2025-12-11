@@ -14,6 +14,6 @@ ax.plot(x, y)
 
 st.pyplot(fig)
 
-df = pd.read_csv("pages/data/DataSaham.csv")
+df = pd.read_csv("data/DataSaham.csv")
 
 st.write(df.head())
