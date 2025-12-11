@@ -2,6 +2,12 @@ import streamlit as st
 
 st.title("Analisis Performa Saham Perusahaan Terdaftar di Bursa Efek Indonesia")
 st.title("Tugas Kelompok Man Jadda Wajada")
+st.write("Nama Anggota
+    Amanda Kharisma
+    Azka Safira Farsya
+    Niswah Aulia Zahra
+    Riski Pratama N" 
+    )
 
 st.header("Pendahuluan")
 st.write("""Pasar modal merupakan salah satu pilar penting dalam mendukung pertumbuhan ekonomi melalui penyediaan sumber pembiayaan jangka panjang bagi perusahaan serta peluang investasi bagi masyarakat. Di Indonesia, Bursa Efek Indonesia (BEI) menjadi pusat aktivitas perdagangan investor memerlukan informasi dan analisis yang akurat untuk dapat mengevaluasi prospek suatu saham secara lebih objektif. Oleh karena itu, penelitian mengenai analisis performa saham perusahaan yang terdaftar di BEI diperlukan untuk memberikan gambaran yang lebih komprehensif mengenai karakteristik dan perilaku saham di pasar modal Indonesia. Penelitian ini bertujuan untuk menelaah performa saham perusahaan di BEI dengan meninjau aspek return, risiko, dan indikator pasar lainnya. Hasilnya diharapkan dapat memperkaya literatur akademik sekaligus menjadi referensi bagi investor, analis, maupun pihak terkait dalam merumuskan strategi dan keputusan investasi yang lebih tepat.""")
