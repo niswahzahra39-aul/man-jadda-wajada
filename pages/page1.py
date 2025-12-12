@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-st.title("Data Visualization")
+st.header("Data Visualization")
 
 
 df = pd.read_csv("data/DaftarSaham.csv")  
