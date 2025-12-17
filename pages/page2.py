@@ -23,3 +23,5 @@ plt.ylabel("Total Kapitalisasi Pasar")
 plt.title("Kapitalisasi Pasar Saham Berdasarkan Sektor di Bursa Efek Indonesia")
     
 st.pyplot(plt)
+
+st.write("Grafik menunjukkan bahwa kapitalisasi pasar saham di Bursa Efek Indonesia didominasi oleh beberapa sektor industri tertentu, sementara sektor lainnya memiliki kontribusi yang relatif lebih kecil. Hal ini mengindikasikan adanya perbedaan kinerja saham antar sektor, yang mencerminkan perbedaan skala usaha dan nilai pasar perusahaan di masing-masing sektor.")
