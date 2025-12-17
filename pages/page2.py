@@ -9,7 +9,4 @@ st.title("Data Visualization")
 
 df = pd.read_csv("data/DaftarSaham.csv")  
 
-st.checkbox('Tampilkan tabel')
-if pilihan_tampil_tabel == True:
 st.write(df.head())
-st.write(df.tail())
