@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Analisis Kapitalisasi Pasar Saham Berdasarkan Sektor di Bursa Efek Indonesia")
+st.title("Analisis Kapitalisasi Pasar Saham Berdasarkan Sektor di Bursa Efek Indonesia 📈")
 
 
 
