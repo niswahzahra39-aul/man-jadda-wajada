@@ -1,3 +1,12 @@
+import streamlit as st
+
+st.set_page_config(
+    page_title="Analisis Kapitalisasi Pasar BEI",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 st.markdown("""
 <style>
     .stApp {
@@ -12,17 +21,16 @@ st.markdown("""
     h1, h2, h3 {
         color: #2563EB;
     }
+
+    div[data-testid="stMetric"] {
+        background-color: #FFFFFF;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
 </style>
 """, unsafe_allow_html=True)
 
-import streamlit as st
-
-st.set_page_config(
-    page_title="Analisis Kapitalisasi Pasar BEI",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 st.markdown("""
 # 📊 Analisis Kapitalisasi Pasar per Sektor di BEI
@@ -51,3 +59,6 @@ pg = st.navigation(
 )
 
 pg.run()
+
+st.markdown("---")
+st.caption("© 2025 | Analisis Kapitalisasi Pasar BEI | Tugas Akademik")
