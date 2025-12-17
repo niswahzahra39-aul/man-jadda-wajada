@@ -1,3 +1,20 @@
+st.markdown("""
+<style>
+    .stApp {
+        background-color: #F8FAFC;
+        color: #0F172A;
+    }
+
+    .stSidebar {
+        background-color: #FFFFFF;
+    }
+
+    h1, h2, h3 {
+        color: #2563EB;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 import streamlit as st
 
 st.set_page_config(
