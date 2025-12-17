@@ -35,7 +35,5 @@ plt.pie(marketcap_sector, labels=marketcap_sector.index, autopct='%1.1f%%')
 plt.title("Proporsi Kapitalisasi Pasar Saham per Sektor di BEI")
 st.pyplot(plt)
 
-st.caption(
-    "Kesimpulan: Grafik lingkaran menunjukkan proporsi kontribusi masing-masing sektor "
-    "terhadap total kapitalisasi pasar saham di Bursa Efek Indonesia."
+st.write("Grafik lingkaran menunjukkan proporsi kontribusi masing-masing sektor terhadap total kapitalisasi pasar saham di Bursa Efek Indonesia."
 )
