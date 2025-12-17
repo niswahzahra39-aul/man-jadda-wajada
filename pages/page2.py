@@ -10,3 +10,4 @@ st.title("Data Visualization")
 df = pd.read_csv("data/DaftarSaham.csv")  
 
 st.write(df.head())
+st.write(df.tail())
