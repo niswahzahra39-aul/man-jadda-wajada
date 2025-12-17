@@ -3,10 +3,13 @@ import streamlit as st
 st.title("Analisis Kinerja Saham Perusahaan Terdaftar di Bursa Efek Indonesia")
 
 
+
 st.header("Tugas Kelompok Man Jadda Wajada")
 st.header("Anggota Kelompok")
 st.write("__Riski Pratama Novianto__")
-
+st.write("__Amanda Kharisma__")
+st.write("__Niswah Aulia Zahra__")
+st.write("__Azka Safira Farsya__")
 
 
 
