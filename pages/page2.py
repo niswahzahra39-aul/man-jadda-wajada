@@ -26,15 +26,16 @@ st.pyplot(plt)
 
 st.write("Grafik menunjukkan bahwa kapitalisasi pasar saham di Bursa Efek Indonesia didominasi oleh beberapa sektor industri tertentu, sementara sektor lainnya memiliki kontribusi yang relatif lebih kecil. Hal ini mengindikasikan adanya perbedaan kinerja saham antar sektor, yang mencerminkan perbedaan skala usaha dan nilai pasar perusahaan di masing-masing sektor.")
 
-st.subheader("Data Jumlah Perusahaan per Sektor")
+st.subheader("Data Proporsi Kapitalisasi Pasar Saham per Sektor di BEI")
 
-jumlah_perusahaan = df['Sector'].value_counts()
+marketcap_sector = df.groupby('Sector')['MarketCap'].sum()
 
 plt.figure()
-jumlah_perusahaan.plot(kind='bar')
-plt.xlabel("Sektor Industri")
-plt.ylabel("Jumlah Perusahaan")
-plt.title("Jumlah Perusahaan Terdaftar per Sektor di BEI")
+plt.pie(marketcap_sector, labels=marketcap_sector.index, autopct='%1.1f%%')
+plt.title("Proporsi Kapitalisasi Pasar Saham per Sektor di BEI")
 st.pyplot(plt)
 
-st.write("Grafik menunjukkan bahwa jumlah perusahaan yang terdaftar di Bursa Efek Indonesia berbeda-beda antar sektor. Hal ini mencerminkan struktur pasar modal Indonesia, di mana beberapa sektor memiliki jumlah emiten yang lebih banyak dibandingkan sektor lainnya.")
+st.caption(
+    "Kesimpulan: Grafik lingkaran menunjukkan proporsi kontribusi masing-masing sektor "
+    "terhadap total kapitalisasi pasar saham di Bursa Efek Indonesia."
+)
