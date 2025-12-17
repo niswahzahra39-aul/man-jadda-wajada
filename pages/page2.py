@@ -35,5 +35,6 @@ plt.pie(marketcap_sector, labels=marketcap_sector.index, autopct='%1.1f%%')
 plt.title("Proporsi Kapitalisasi Pasar Saham per Sektor di BEI")
 st.pyplot(plt)
 
-st.write("Grafik lingkaran menunjukkan proporsi kontribusi masing-masing sektor terhadap total kapitalisasi pasar saham di Bursa Efek Indonesia."
+st.write("Grafik lingkaran menunjukkan proporsi kontribusi masing-masing sektor terhadap total kapitalisasi pasar saham di Bursa Efek Indonesia. Terlihat bahwa beberapa sektor memiliki porsi kapitalisasi pasar yang lebih dominan dibandingkan sektor lainnya, yang mengindikasikan adanya perbedaan skala dan nilai pasar perusahaan antar sektor. Kondisi ini mencerminkan bahwa struktur pasar saham di Indonesia tidak terdistribusi secara merata, di mana nilai pasar cenderung terkonsentrasi pada sektor-sektor tertentu."
 )
+

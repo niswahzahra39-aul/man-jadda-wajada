@@ -1,6 +1,5 @@
 import streamlit as st
 
-st.titlle("settings")
-st.titlle("this page allows you to customize your prefserences")
-st.titlle("this page allows you to customize your prefserences")
+st.subheader("Analisis dari grafik data")
+st.write("Berdasarkan grafik kapitalisasi pasar di setiap sektor industri, terlihat bahwa nilai kapitalisasi pasar saham di Bursa Efek Indonesia tidak sama antar sektor. Beberapa sektor memiliki kapitalisasi pasar yang lebih besar dibandingkan sektor lainnya, yang menunjukkan bahwa sektor tersebut berperan lebih besar dalam struktur pasar saham Indonesia. Sementara itu, sektor dengan kapitalisasi pasar lebih kecil menunjukkan perbedaan ukuran dan ciri perusahaan yang beroperasi di masing-masing sektor. Selain itu, grafik yang menampilkan proporsi kapitalisasi pasar per sektor menunjukkan bahwa nilai pasar saham di Bursa Efek Indonesia lebih banyak terpusat pada sektor-sektor tertentu. Hal ini menunjukkan bahwa pergerakan pasar saham secara keseluruhan dipengaruhi oleh kinerja sektor-sektor utama tersebut. Dengan demikian, analisis kapitalisasi pasar per sektor memberikan gambaran yang penting mengenai struktur dan penyebaran nilai pasar saham di Bursa Efek Indonesia.")
 
