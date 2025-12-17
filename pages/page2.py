@@ -13,8 +13,7 @@ st.write(df.head())
 st.write(df.tail())
 
 st.radio(
-    "Visualisasi Data",
-    ("Sembunyikan grafik", "Tampilkan grafik kapitalisasi pasar per sektor")
+    ("Tampilkan grafik kapitalisasi pasar per sektor")
 )
 
 if pilihan == "Tampilkan grafik kapitalisasi pasar per sektor":
