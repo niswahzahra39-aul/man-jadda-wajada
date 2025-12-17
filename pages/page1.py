@@ -4,6 +4,9 @@ st.title("Analisis Kinerja Saham Perusahaan Terdaftar di Bursa Efek Indonesia")
 
 st.header("Tugas Kelompok Man Jadda Wajada")
 st.header("Anggota Kelompok")
+st.write("Riski Pratama Novianto")
+
+
 
 
 st.header("Pendahuluan")
