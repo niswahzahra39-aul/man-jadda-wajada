@@ -12,7 +12,12 @@ df = pd.read_csv("data/DaftarSaham.csv")
 st.write(df.head())
 st.write(df.tail())
 
-with st.expander("Klik untuk melihat grafik kapitalisasi pasar per sektor"):
+st.radio(
+    "Visualisasi Data",
+    ("Sembunyikan grafik", "Tampilkan grafik kapitalisasi pasar per sektor")
+)
+
+if pilihan == "Tampilkan grafik kapitalisasi pasar per sektor":
     marketcap_sector = df.groupby('Sector')['MarketCap'].sum().sort_values(ascending=False)
     
     plt.figure()
