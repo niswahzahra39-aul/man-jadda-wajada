@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Analisis Performa Saham Perusahaan Terdaftar di Bursa Efek Indonesia")
+st.title("Analisis Kinerja Saham Perusahaan Terdaftar di Bursa Efek Indonesia")
 st.title("Tugas Kelompok Man Jadda Wajada")
 
 
