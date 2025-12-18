@@ -47,7 +47,6 @@ with col1:
     ax.set_xlabel("Sektor Industri")
     ax.set_ylabel("Total Kapitalisasi Pasar")
     ax.set_title("Kapitalisasi Pasar Saham per Sektor")
-    ax.invert_yaxis()
 
     st.pyplot(fig)
 
