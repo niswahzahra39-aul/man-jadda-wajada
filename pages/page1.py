@@ -16,7 +16,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("**Anggota Kelompok:**")
     st.markdown("""
-    - Riski Pratama Novianto  
+    - Riski Pratama Nofianto  
     - Amanda Kharisma  
     """)
 
