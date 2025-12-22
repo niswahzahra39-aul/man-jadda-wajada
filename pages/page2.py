@@ -12,7 +12,17 @@ berdasarkan sektor industri di Bursa Efek Indonesia.
 st.markdown("---")
 
 
-df = pd.read_csv("data/DaftarSahamTerbaru.csv")  
+from pathlib import Path
+
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "DaftarSahamTerbaru.csv"
+
+df = pd.read_csv(
+    DATA_PATH,
+    sep=";",            
+    encoding="latin1",  
+    engine="python"     
+)
+  
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
