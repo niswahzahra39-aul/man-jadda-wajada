@@ -31,12 +31,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
-st.markdown("---")
-
-with st.sidebar:
-    st.markdown("## 🔎 Navigasi")
-    st.caption("Gunakan menu di bawah untuk berpindah halaman")
     
 
 pages = [
