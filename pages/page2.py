@@ -21,8 +21,18 @@ df = pd.read_csv(
     engine="python"
 )
 
-# 🔧 INI YANG DITAMBAHKAN (PALING PENTING)
+# Bersihkan nama kolom
 df.columns = df.columns.str.strip()
+
+# 🔍 Deteksi kolom sektor otomatis
+if "Sector" in df.columns:
+    sector_col = "Sector"
+elif "Sektor" in df.columns:
+    sector_col = "Sektor"
+else:
+    st.error("Kolom sektor tidak ditemukan di dataset.")
+    st.write("Kolom yang tersedia:", df.columns.tolist())
+    st.stop()
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
@@ -31,18 +41,18 @@ st.subheader("📌 Pilih Sektor Industri")
 
 sektor = st.multiselect(
     "Sektor Industri",
-    options=df["Sector"].unique(),
-    default=df["Sector"].unique()
+    options=df[sector_col].unique(),
+    default=df[sector_col].unique()
 )
 
-df_filt = df[df["Sector"].isin(sektor)]
+df_filt = df[df[sector_col].isin(sektor)]
 
 st.markdown("---")
 
 with st.expander("📈 Lihat Grafik & Kesimpulan Kapitalisasi Pasar"):
 
     marketcap_sector = (
-        df_filt.groupby("Sector")["MarketCap"]
+        df_filt.groupby(sector_col)["MarketCap"]
         .sum()
         .sort_values(ascending=False)
     )
