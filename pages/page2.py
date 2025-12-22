@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+
 
 st.header("📊 Visualisasi Data Kapitalisasi Pasar")
 
@@ -12,17 +14,15 @@ berdasarkan sektor industri di Bursa Efek Indonesia.
 st.markdown("---")
 
 
-from pathlib import Path
-
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "DaftarSahamTerbaru.csv"
 
 df = pd.read_csv(
     DATA_PATH,
-    sep=";",            
-    encoding="latin1",  
-    engine="python"     
+    sep=";",
+    encoding="latin1",
+    engine="python"
 )
-  
+
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
@@ -40,52 +40,36 @@ df_filt = df[df["Sector"].isin(sektor)]
 
 st.markdown("---")
 
-col1, col2 = st.columns(2)
 
+with st.expander("📈 Lihat Grafik & Kesimpulan Kapitalisasi Pasar"):
 
-with col1:
-    st.subheader("📈 Kapitalisasi Pasar per Sektor")
-
+    
     marketcap_sector = (
         df_filt.groupby("Sector")["MarketCap"]
         .sum()
         .sort_values(ascending=False)
     )
 
-    fig, ax = plt.subplots()
+    
+    st.subheader("📊 Kapitalisasi Pasar Saham per Sektor")
+
+    fig, ax = plt.subplots(figsize=(10, 5))
     marketcap_sector.plot(kind="bar", ax=ax)
+
     ax.set_xlabel("Sektor Industri")
     ax.set_ylabel("Total Kapitalisasi Pasar")
-    ax.set_title("Kapitalisasi Pasar Saham per Sektor")
+    ax.set_title("Kapitalisasi Pasar Saham per Sektor di Bursa Efek Indonesia")
+    plt.xticks(rotation=45, ha="right")
 
     st.pyplot(fig)
 
-    st.caption("""
-    Grafik batang menunjukkan perbedaan total kapitalisasi pasar
-    antar sektor industri di Bursa Efek Indonesia.
+    
+    st.markdown("### 📝 Kesimpulan")
+    st.write("""
+    Berdasarkan grafik batang di atas, dapat disimpulkan bahwa kapitalisasi pasar
+    saham di Bursa Efek Indonesia tidak tersebar secara merata antar sektor industri.
+    Beberapa sektor menunjukkan nilai kapitalisasi pasar yang lebih besar dibandingkan
+    sektor lainnya, yang menandakan adanya dominasi sektor tertentu dalam struktur
+    pasar saham. Kondisi ini mencerminkan perbedaan skala perusahaan dan minat investor
+    pada masing-masing sektor industri.
     """)
-
-
-with col2:
-    st.subheader("🥧 Proporsi Kapitalisasi Pasar")
-
-    fig2, ax2 = plt.subplots()
-    ax2.pie(
-        marketcap_sector,
-        labels=marketcap_sector.index,
-        autopct="%1.1f%%",
-        startangle=90
-    )
-    ax2.set_title("Proporsi Kapitalisasi Pasar Saham per Sektor")
-
-    st.pyplot(fig2)
-
-    st.caption("""
-    Grafik lingkaran menggambarkan kontribusi relatif masing-masing
-    sektor terhadap total kapitalisasi pasar saham di BEI.
-    """)
-
-st.markdown("---")
-
-with st.expander("📝 Interpretasi Visualisasi"):
-    st.write("""Hasil visualisasi menunjukkan bahwa kapitalisasi pasar saham di Bursa Efek Indonesia tidak terdistribusi secara merata antar sektor. Beberapa sektor memiliki nilai kapitalisasi yang jauh lebih besar, yang mengindikasikan dominasi sektor tertentu dalam struktur pasar saham.""")
