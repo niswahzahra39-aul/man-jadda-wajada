@@ -32,12 +32,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown("""
-# 📊 Analisis Kapitalisasi Pasar per Sektor di BEI
-Aplikasi interaktif untuk menyajikan analisis kapitalisasi pasar
-berdasarkan sektor industri di Bursa Efek Indonesia.
-""")
-
 st.markdown("---")
 
 with st.sidebar:
