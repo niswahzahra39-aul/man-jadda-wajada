@@ -12,7 +12,7 @@ berdasarkan sektor industri di Bursa Efek Indonesia.
 st.markdown("---")
 
 
-df = pd.read_csv("data/DaftarSaham.csv")  
+df = pd.read_csv("data/DaftarSahamTerbaru.csv")  
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
