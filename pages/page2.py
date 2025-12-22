@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-
 st.header("📊 Visualisasi Data Kapitalisasi Pasar")
 
 st.write("""
@@ -12,7 +11,6 @@ berdasarkan sektor industri di Bursa Efek Indonesia.
 """)
 
 st.markdown("---")
-
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "DaftarSahamTerbaru.csv"
 
@@ -23,10 +21,11 @@ df = pd.read_csv(
     engine="python"
 )
 
+# 🔧 INI YANG DITAMBAHKAN (PALING PENTING)
+df.columns = df.columns.str.strip()
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
-
 
 st.subheader("📌 Pilih Sektor Industri")
 
@@ -40,17 +39,14 @@ df_filt = df[df["Sector"].isin(sektor)]
 
 st.markdown("---")
 
-
 with st.expander("📈 Lihat Grafik & Kesimpulan Kapitalisasi Pasar"):
 
-    
     marketcap_sector = (
         df_filt.groupby("Sector")["MarketCap"]
         .sum()
         .sort_values(ascending=False)
     )
 
-    
     st.subheader("📊 Kapitalisasi Pasar Saham per Sektor")
 
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -63,7 +59,6 @@ with st.expander("📈 Lihat Grafik & Kesimpulan Kapitalisasi Pasar"):
 
     st.pyplot(fig)
 
-    
     st.markdown("### 📝 Kesimpulan")
     st.write("""
     Berdasarkan grafik batang di atas, dapat disimpulkan bahwa kapitalisasi pasar
