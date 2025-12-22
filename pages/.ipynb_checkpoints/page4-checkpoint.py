@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("✅ Kesimpulan")
+st.subheader("📌 Kesimpulan")
 
 st.write("""
 Berdasarkan hasil analisis yang telah dilakukan, dapat disimpulkan bahwa nilai kapitalisasi pasar saham di Bursa Efek Indonesia tidak terdistribusi secara merata antar sektor industri. Beberapa sektor memiliki nilai kapitalisasi pasar yang lebih besar dan cenderung mendominasi pasar saham, sementara sektor lainnya memberikan kontribusi yang relatif lebih kecil.
