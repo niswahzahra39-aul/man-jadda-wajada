@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-st.header("📊 Visualisasi Data Kapitalisasi Pasar")
+st.header("📊 Visualisasi Data Struktur Pasar Saham")
 
 st.write("""
-Halaman ini menyajikan visualisasi data kapitalisasi pasar saham
+Halaman ini menyajikan visualisasi data struktur pasar saham
 berdasarkan sektor industri di Bursa Efek Indonesia.
 """)
 
@@ -14,12 +14,9 @@ st.markdown("---")
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.xlsx"
 
-df = pd.read_excel(
-    DATA_PATH,
-    sep=";",
-    encoding="latin1",
-    engine="python"
-)
+df = pd.read_excel(DATA_PATH)
+
+st.dataframe(df)
 
 # Bersihkan nama kolom
 df.columns = df.columns.str.strip()
