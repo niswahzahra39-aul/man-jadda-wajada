@@ -1,82 +1,77 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-st.header("📊 Visualisasi Data Kapitalisasi Pasar")
+st.header("📊 Visualisasi Data Struktur Pasar Saham")
 
 st.write("""
-Halaman ini menyajikan visualisasi data kapitalisasi pasar saham
+Halaman ini menyajikan visualisasi data struktur pasar saham
 berdasarkan sektor industri di Bursa Efek Indonesia.
 """)
 
 st.markdown("---")
 
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.xlsx"
 
-df = pd.read_csv("data/DaftarSaham.csv")  
+df = pd.read_excel(DATA_PATH)
+
+st.dataframe(df)
+
+# Bersihkan nama kolom
+df.columns = df.columns.str.strip()
+
+# 🔍 Deteksi kolom sektor otomatis
+if "Sector" in df.columns:
+    sector_col = "Sector"
+elif "Sektor" in df.columns:
+    sector_col = "Sektor"
+else:
+    st.error("Kolom sektor tidak ditemukan di dataset.")
+    st.write("Kolom yang tersedia:", df.columns.tolist())
+    st.stop()
 
 with st.expander("🔍 Lihat Data Saham"):
     st.dataframe(df)
-
 
 st.subheader("📌 Pilih Sektor Industri")
 
 sektor = st.multiselect(
     "Sektor Industri",
-    options=df["Sector"].unique(),
-    default=df["Sector"].unique()
+    options=df[sector_col].unique(),
+    default=df[sector_col].unique()
 )
 
-df_filt = df[df["Sector"].isin(sektor)]
+df_filt = df[df[sector_col].isin(sektor)]
 
 st.markdown("---")
 
-col1, col2 = st.columns(2)
-
-
-with col1:
-    st.subheader("📈 Kapitalisasi Pasar per Sektor")
+with st.expander("📈 Lihat Grafik & Kesimpulan Kapitalisasi Pasar"):
 
     marketcap_sector = (
-        df_filt.groupby("Sector")["MarketCap"]
+        df_filt.groupby(sector_col)["MarketCap"]
         .sum()
         .sort_values(ascending=False)
     )
 
-    fig, ax = plt.subplots()
+    st.subheader("📊 Kapitalisasi Pasar Saham per Sektor")
+
+    fig, ax = plt.subplots(figsize=(10, 5))
     marketcap_sector.plot(kind="bar", ax=ax)
+
     ax.set_xlabel("Sektor Industri")
     ax.set_ylabel("Total Kapitalisasi Pasar")
-    ax.set_title("Kapitalisasi Pasar Saham per Sektor")
-    ax.invert_yaxis()
+    ax.set_title("Kapitalisasi Pasar Saham per Sektor di Bursa Efek Indonesia")
+    plt.xticks(rotation=45, ha="right")
 
     st.pyplot(fig)
 
-    st.caption("""
-    Grafik batang menunjukkan perbedaan total kapitalisasi pasar
-    antar sektor industri di Bursa Efek Indonesia.
+    st.markdown("### 📝 Kesimpulan")
+    st.write("""
+    Berdasarkan grafik batang di atas, dapat disimpulkan bahwa kapitalisasi pasar
+    saham di Bursa Efek Indonesia tidak tersebar secara merata antar sektor industri.
+    Beberapa sektor menunjukkan nilai kapitalisasi pasar yang lebih besar dibandingkan
+    sektor lainnya, yang menandakan adanya dominasi sektor tertentu dalam struktur
+    pasar saham. Kondisi ini mencerminkan perbedaan skala perusahaan dan minat investor
+    pada masing-masing sektor industri.
     """)
-
-
-with col2:
-    st.subheader("🥧 Proporsi Kapitalisasi Pasar")
-
-    fig2, ax2 = plt.subplots()
-    ax2.pie(
-        marketcap_sector,
-        labels=marketcap_sector.index,
-        autopct="%1.1f%%",
-        startangle=90
-    )
-    ax2.set_title("Proporsi Kapitalisasi Pasar Saham per Sektor")
-
-    st.pyplot(fig2)
-
-    st.caption("""
-    Grafik lingkaran menggambarkan kontribusi relatif masing-masing
-    sektor terhadap total kapitalisasi pasar saham di BEI.
-    """)
-
-st.markdown("---")
-
-with st.expander("📝 Interpretasi Visualisasi"):
-    st.write("""Hasil visualisasi menunjukkan bahwa kapitalisasi pasar saham di Bursa Efek Indonesia tidak terdistribusi secara merata antar sektor. Beberapa sektor memiliki nilai kapitalisasi yang jauh lebih besar, yang mengindikasikan dominasi sektor tertentu dalam struktur pasar saham.""")
