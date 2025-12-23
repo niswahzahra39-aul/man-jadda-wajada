@@ -60,8 +60,7 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 
 st.subheader("📖 Pendahuluan")
 st.write("""
-Pasar modal memainkan peran penting dalam perekonomian Indonesia, karena menjadi sarana bagi perusahaan untuk mendapatkan dana sekaligus menjadi pilihan investasi bagi masyarakat. Salah satu indikator utama yang digunakan untuk melihat nilai dan posisi perusahaan di pasar saham adalah kapitalisasi pasar. Perusahaan yang terdaftar di Bursa Efek Indonesia berasal dari berbagai sektor industri dengan karakteristik dan ukuran bisnis yang berbeda, sehingga nilai kapitalisasi pasar di setiap sektor tidak selalu sama. Oleh karena itu, analisis kapitalisasi pasar per sektor dilakukan untuk mengetahui kontribusi
-masing-masing sektor terhadap total nilai pasar saham serta memahami struktur pasar saham Indonesia secara lebih jelas.
+Pasar saham di Bursa Efek Indonesia terdiri dari berbagai sektor industri dengan karakteristik yang berbeda, baik dari sisi jumlah emiten maupun skala perusahaannya. Perbedaan tersebut menyebabkan struktur pasar pada setiap sektor tidak sama, ada sektor yang cenderung didominasi oleh beberapa perusahaan besar dan ada pula yang persaingannya lebih merata. Analisis struktur pasar saham berdasarkan sektor dilakukan untuk memberikan gambaran mengenai pola persaingan dan tingkat penguasaan pasar saham sektoral di Bursa Efek Indonesia.
 """)
 
 st.markdown("---")
