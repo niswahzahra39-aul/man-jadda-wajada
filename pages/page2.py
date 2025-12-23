@@ -12,9 +12,9 @@ berdasarkan sektor industri di Bursa Efek Indonesia.
 
 st.markdown("---")
 
-DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.xlsx"
+DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.csv"
 
-df = pd.read_excel(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 
 st.dataframe(df)
 
