@@ -9,23 +9,22 @@ DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.c
 
 df = pd.read_csv(DATA_PATH, sep=';', encoding='latin1')
 
+df.columns = df.columns.str.strip()
+
+st.subheader("Tabel Data Saham")
 st.dataframe(df)
 
-if "Sektor" in df.columns and not df['Sektor'].empty:
-    sektor_count = df['Sektor'].value_counts()
 
-    # Bar chart
+if "Sector" in df.columns:
+    df["Sector"] = df["Sector"].astype(str)
+    sektor_count = df["Sector"].value_counts()
+    
     st.subheader("Jumlah Saham per Sektor")
-    fig1, ax1 = plt.subplots()
-    sektor_count.plot(kind='bar', ax=ax1, color='skyblue')
-    st.pyplot(fig1)
-
-    st.write("Analisis bar chart di sini")
-
-    # Pie chart
-    st.subheader("Persentase Saham per Sektor")
-    fig2, ax2 = plt.subplots()
-    sektor_count.plot(kind='pie', ax=ax2, autopct="%1.1f%%")
-    st.pyplot(fig2)
-
-    st.write("Analisis pie chart di sini")
+    fig, ax = plt.subplots()
+    sektor_count.plot(kind="bar", ax=ax, color="skyblue")
+    ax.set_xlabel("Sektor Industri")
+    ax.set_ylabel("Jumlah Saham")
+    ax.set_title("Jumlah Saham per Sektor")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    st.pyplot(fig)
