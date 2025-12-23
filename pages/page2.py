@@ -38,7 +38,7 @@ if "Sector" in df.columns and not df['Sector'].empty:
     # --------------------------
     st.subheader("Jumlah Saham per Sektor")
     fig1, ax1 = plt.subplots(figsize=(12,6))
-    sector_count.plot(kind="bar", ax=ax1, color="skyblue")
+    sektor_count.plot(kind="bar", ax=ax1, color="skyblue")
     ax1.set_xlabel("Sektor Industri")
     ax1.set_ylabel("Jumlah Saham")
     ax1.set_title("Jumlah Saham per Sektor")
@@ -58,7 +58,7 @@ if "Sector" in df.columns and not df['Sector'].empty:
     # --------------------------
     st.subheader("Persentase Saham per Sektor")
     fig2, ax2 = plt.subplots(figsize=(8,8))
-    sector_count.plot(kind="pie", ax=ax2, autopct="%1.1f%%", startangle=90)
+    sektor_count.plot(kind="pie", ax=ax2, autopct="%1.1f%%", startangle=90)
     ax2.set_ylabel("")
     ax2.set_title("Distribusi Saham per Sektor")
     plt.tight_layout()
