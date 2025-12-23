@@ -55,7 +55,7 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-
+st.markdown("<br><br>", unsafe_allow_html=True)
 
 
 st.subheader("📖 Pendahuluan")
