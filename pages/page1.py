@@ -26,7 +26,7 @@ st.markdown("""
 
 st.markdown("""
 <div class="title-box">
-    <h1>📈 Analisis Kapitalisasi Pasar Saham</h1>
+    <h1>📈 Analisis Struktur Pasar Saham</h1>
     <h4>Berdasarkan Sektor di Bursa Efek Indonesia</h4>
 </div>
 """, unsafe_allow_html=True)
