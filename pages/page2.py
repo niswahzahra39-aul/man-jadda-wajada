@@ -26,19 +26,19 @@ st.dataframe(df)
 # --------------------------
 # Cek kolom Sektor
 # --------------------------
-if "Sektor" in df.columns and not df['Sektor'].empty:
+if "Sector" in df.columns and not df['Sector'].empty:
     # Pastikan kolom bertipe string
-    df["Sektor"] = df["Sektor"].astype(str)
+    df["Sector"] = df["Sector"].astype(str)
     
     # Hitung jumlah saham per sektor
-    sektor_count = df["Sektor"].value_counts()
+    sektor_count = df["Sector"].value_counts()
     
     # --------------------------
     # Bar chart: jumlah saham per sektor
     # --------------------------
     st.subheader("Jumlah Saham per Sektor")
     fig1, ax1 = plt.subplots(figsize=(12,6))
-    sektor_count.plot(kind="bar", ax=ax1, color="skyblue")
+    sector_count.plot(kind="bar", ax=ax1, color="skyblue")
     ax1.set_xlabel("Sektor Industri")
     ax1.set_ylabel("Jumlah Saham")
     ax1.set_title("Jumlah Saham per Sektor")
@@ -58,7 +58,7 @@ if "Sektor" in df.columns and not df['Sektor'].empty:
     # --------------------------
     st.subheader("Persentase Saham per Sektor")
     fig2, ax2 = plt.subplots(figsize=(8,8))
-    sektor_count.plot(kind="pie", ax=ax2, autopct="%1.1f%%", startangle=90)
+    sector_count.plot(kind="pie", ax=ax2, autopct="%1.1f%%", startangle=90)
     ax2.set_ylabel("")
     ax2.set_title("Distribusi Saham per Sektor")
     plt.tight_layout()
