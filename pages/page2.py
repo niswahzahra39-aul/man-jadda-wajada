@@ -63,5 +63,3 @@ if st.checkbox("Tampilkan Pie Chart Saham per Sektor"):
     ini membantu memahami struktur pasar saham di Indonesia.
     """)
 
-else:
-    st.warning("Kolom 'Sektor' tidak ditemukan atau kosong.")
