@@ -68,5 +68,5 @@ st.markdown("---")
 
 st.subheader("📊 Deskripsi Data")
 st.write("""
-Penelitian ini menggunakan data sekunder yang diperoleh dari platform Kaggle, berupa data historis harga saham perusahaan yang terdaftar di Bursa Efek Indonesia (BEI). Dataset mencakup informasi tanggal perdagangan, harga pembukaan, harga penutupan, harga tertinggi, harga terendah, serta volume transaksi. Data kemudian melalui proses pembersihan (data cleaning) untuk menjaga konsistensi dan kelengkapan sebelum diolah menjadi variabel analisis yang relevan.""")
+Data yang digunakan dalam analisis ini berasal dari perusahaan yang terdaftar di Bursa Efek Indonesia dan dikelompokkan berdasarkan sektor industri. Data ini memuat informasi mengenai sektor usaha dan jumlah saham beredar pada masing-masing emiten, sehingga dapat digunakan untuk melihat distribusi perusahaan dan skala saham beredar di setiap sektor. Data tersebut menjadi dasar dalam menganalisis struktur pasar saham berdasarkan sektor di Bursa Efek Indonesia.""")
 
