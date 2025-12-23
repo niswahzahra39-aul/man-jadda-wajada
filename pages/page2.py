@@ -16,7 +16,7 @@ DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "daftarsahambaru.c
 
 df = pd.read_csv(DATA_PATH, sep=';', encoding='latin1')
 
-st.dataframe(df)
+st.dataframe(df.reset_index(drop=True))
 
 if "Sektor" in df.columns:
     sektor_count = df['Sektor'].value_counts()
