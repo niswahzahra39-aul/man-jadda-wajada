@@ -6,7 +6,7 @@ st.markdown("""
 ### 🧭 Step 1: Membuka Website Resmi BEI
 - Buka browser (Chrome/Firefox/Edge)
 - Akses website resmi Bursa Efek Indonesia:
-  👉 https://www.idx.co.id
+   https://www.idx.co.id
 
 ### 🧭 Step 2: Masuk ke Menu Data Pasar
 - Pada halaman utama IDX, klik menu **Data Pasar**
