@@ -10,3 +10,6 @@ st.markdown("""
 """)
 
 st.image("assets/step1_idx_home.png")
+
+import os
+st.write("File ada:", os.path.exists("assets/step1_idx_home.png"))
