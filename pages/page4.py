@@ -7,6 +7,7 @@ st.markdown("""
 - Buka browser (Chrome/Firefox/Edge)
 - Akses website resmi Bursa Efek Indonesia:
    https://www.idx.co.id
+st.image(assets/step1_idx_home.png", caption="Halaman utama website BEI", use_container_width=True)
 
 ### 🧭 Step 2: Masuk ke Menu Data Pasar
 - Pada halaman utama IDX, klik menu **Data Pasar**
