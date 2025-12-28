@@ -9,7 +9,4 @@ st.markdown("""
   https://www.idx.co.id
 """)
 
-st.image(
-    "assets/step1_idx_home.png",
-    caption="Halaman utama website BEI",
-)
+st.image("assets/step1_idx_home.png")
