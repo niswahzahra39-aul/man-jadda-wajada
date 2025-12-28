@@ -1,4 +1,9 @@
 import streamlit as st
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+ASSETS = BASE_DIR / "assets"
 
 st.title("📥 Cara Mengunduh Data Daftar Saham BEI")
 
@@ -8,6 +13,7 @@ berdasarkan sektor industri dari website resmi Bursa Efek Indonesia (IDX).
 """)
 
 st.markdown("---")
+
 
 st.subheader("🧭 Step 1: Membuka Website Resmi BEI")
 
@@ -22,10 +28,11 @@ with col1:
 
 with col2:
     st.image(
-        "../assets/step1_idx_home.png",
+        ASSETS / "step1_idx_home.png",
         caption="Halaman utama website BEI",
         use_container_width=True
     )
+
 
 st.markdown("---")
 st.subheader("🧭 Step 2: Masuk ke Menu Data Pasar")
@@ -40,10 +47,11 @@ with col1:
 
 with col2:
     st.image(
-        "../assets/step2_data_pasar.png",
+        ASSETS / "step2_data_pasar.png",
         caption="Menu Data Pasar pada website IDX",
         use_container_width=True
     )
+
 
 st.markdown("---")
 st.subheader("🧭 Step 3: Mengakses Daftar Saham")
@@ -59,10 +67,11 @@ with col1:
 
 with col2:
     st.image(
-        "../assets/step3_daftar_saham.png",
+        ASSETS / "step3_daftar_saham.png",
         caption="Halaman daftar saham di BEI",
         use_container_width=True
     )
+
 
 st.markdown("---")
 st.subheader("🧭 Step 4: Mengunduh Data")
@@ -83,13 +92,3 @@ st.success("""
 - Visualisasi jumlah saham per sektor
 - Pengolahan data lanjutan menggunakan Python
 """)
-
-import os
-
-st.markdown("---")
-st.write("DEBUG PATH CHECK")
-st.write("Working directory:", os.getcwd())
-st.write("Assets exists:", os.path.exists("../assets"))
-st.write("Image 1 exists:", os.path.exists("../assets/step1_idx_home.png"))
-st.write("Image 2 exists:", os.path.exists("../assets/step2_data_pasar.png"))
-st.write("Image 3 exists:", os.path.exists("../assets/step3_daftar_saham.png"))
