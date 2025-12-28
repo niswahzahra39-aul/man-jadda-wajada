@@ -1,9 +1,16 @@
 import streamlit as st
 from pathlib import Path
+from PIL import Image
 
+# =========================
+# PATH CONFIG
+# =========================
 BASE_DIR = Path(__file__).resolve().parents[1]
 ASSETS = BASE_DIR / "assets"
 
+# =========================
+# TITLE & INTRO
+# =========================
 st.title("📥 Cara Mengunduh Data Daftar Saham BEI")
 
 st.markdown("""
@@ -13,7 +20,23 @@ berdasarkan sektor industri dari website resmi Bursa Efek Indonesia (IDX).
 
 st.markdown("---")
 
+# =========================
+# HELPER FUNCTION (AMAN)
+# =========================
+def show_image(filename, caption):
+    img_path = ASSETS / filename
+    if img_path.exists():
+        try:
+            image = Image.open(img_path)
+            st.image(image, caption=caption, use_container_width=True)
+        except Exception as e:
+            st.error(f"❌ Gagal membuka gambar: {filename}")
+    else:
+        st.error(f"❌ File tidak ditemukan: {filename}")
 
+# =========================
+# STEP 1
+# =========================
 st.subheader("🧭 Step 1: Membuka Website Resmi BEI")
 
 col1, col2 = st.columns([1.2, 1.8])
@@ -26,15 +49,16 @@ with col1:
     """)
 
 with col2:
-    img1 = ASSETS / "step1_idx_home.png"
-    if img1.exists():
-        st.image(str(img1), caption="Halaman utama website BEI", use_container_width=True)
-    else:
-        st.error("❌ Gambar step1_idx_home.png tidak ditemukan di folder assets")
+    show_image(
+        "step1_idx_home.png",
+        "Halaman utama website BEI"
+    )
 
 st.markdown("---")
 
-
+# =========================
+# STEP 2
+# =========================
 st.subheader("🧭 Step 2: Masuk ke Menu Data Pasar")
 
 col1, col2 = st.columns([1.2, 1.8])
@@ -46,15 +70,16 @@ with col1:
     """)
 
 with col2:
-    img2 = ASSETS / "step2_data_pasar.png"
-    if img2.exists():
-        st.image(str(img2), caption="Menu Data Pasar pada website IDX", use_container_width=True)
-    else:
-        st.error("❌ Gambar step2_data_pasar.png tidak ditemukan di folder assets")
+    show_image(
+        "step2_data_pasar.png",
+        "Menu Data Pasar pada website IDX"
+    )
 
 st.markdown("---")
 
-
+# =========================
+# STEP 3
+# =========================
 st.subheader("🧭 Step 3: Mengakses Daftar Saham")
 
 col1, col2 = st.columns([1.2, 1.8])
@@ -67,15 +92,16 @@ with col1:
     """)
 
 with col2:
-    img3 = ASSETS / "step3_daftar_saham.png"
-    if img3.exists():
-        st.image(str(img3), caption="Halaman daftar saham di BEI", use_container_width=True)
-    else:
-        st.error("❌ Gambar step3_daftar_saham.png tidak ditemukan di folder assets")
+    show_image(
+        "step3_daftar_saham.png",
+        "Halaman daftar saham di BEI"
+    )
 
 st.markdown("---")
 
-
+# =========================
+# STEP 4
+# =========================
 st.subheader("🧭 Step 4: Mengunduh Data")
 
 st.markdown("""
