@@ -1,6 +1,13 @@
 import streamlit as st
 
-st.markdown("## 🪜 Steps Mengunduh Data Daftar Saham per Sektor dari BEI (IDX)")
+st.title("📥 Cara Mengunduh Data Daftar Saham BEI")
+
+st.markdown("""
+Halaman ini berisi panduan langkah-langkah mengunduh data daftar saham
+berdasarkan sektor industri dari website resmi Bursa Efek Indonesia (IDX).
+""")
+
+st.markdown("---")
 
 st.markdown("""
 ### 🧭 Step 1: Membuka Website Resmi BEI
