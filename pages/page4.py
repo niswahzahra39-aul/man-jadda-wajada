@@ -83,3 +83,13 @@ st.success("""
 - Visualisasi jumlah saham per sektor
 - Pengolahan data lanjutan menggunakan Python
 """)
+
+import os
+
+st.markdown("---")
+st.write("DEBUG PATH CHECK")
+st.write("Working directory:", os.getcwd())
+st.write("Assets exists:", os.path.exists("../assets"))
+st.write("Image 1 exists:", os.path.exists("../assets/step1_idx_home.png"))
+st.write("Image 2 exists:", os.path.exists("../assets/step2_data_pasar.png"))
+st.write("Image 3 exists:", os.path.exists("../assets/step3_daftar_saham.png"))
