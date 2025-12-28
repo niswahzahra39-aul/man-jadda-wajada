@@ -12,5 +12,4 @@ st.markdown("""
 st.image(
     "assets/step1_idx_home.png",
     caption="Halaman utama website BEI",
-    use_container_width=True
 )
