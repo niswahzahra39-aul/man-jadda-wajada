@@ -5,7 +5,7 @@ from PIL import Image
 # =========================
 # PATH CONFIG (AMAN STREAMLIT CLOUD)
 # =========================
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = Path(__file__).resolve().parents[1]  # root project
 ASSETS = BASE_DIR / "assets"
 
 # =========================
@@ -33,8 +33,8 @@ def show_image(filename, caption):
     try:
         img = Image.open(img_path)
         st.image(img, caption=caption, use_container_width=True)
-    except Exception:
-        st.error(f"❌ Gagal membuka gambar: {filename}")
+    except Exception as e:
+        st.error(f"❌ Gagal membuka gambar: {filename}\n{e}")
 
 # =========================
 # STEP 1
@@ -47,7 +47,7 @@ with col1:
     st.markdown("""
     - Buka browser (Chrome / Firefox / Edge)
     - Akses website resmi Bursa Efek Indonesia:
-    - https://www.idx.co.id
+      [https://www.idx.co.id](https://www.idx.co.id)
     """)
 
 with col2:
