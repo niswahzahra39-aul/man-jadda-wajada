@@ -9,7 +9,8 @@ st.markdown("""
   https://www.idx.co.id
 """)
 
-st.image("assets/step1_idx_home.png")
-
-import os
-st.write("File ada:", os.path.exists("assets/step1_idx_home.png"))
+st.image(
+    "../assets/step1_idx_home.png",
+    caption="Halaman utama website BEI",
+    use_container_width=True
+)
